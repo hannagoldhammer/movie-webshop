@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="cartDiv">
+    <h3>Cart</h3>
+    <div>
+    <div *ngIf="cartService.getTotalPrice() == 0">
+      <p>Your cart is empty.</p>
+    </div>
+    </div>
+    <div *ngFor="let item of getCartItems()" class="row">
+      <div class="col-3 col-lg-2">
+        <img src={{item.imageUrl}} alt="Movie Image" class="cartMovieImg">
+      </div>
+      <div class="movieInfoDiv col-7 col-lg-8">
+        <div>
+          <div>
+            {{ item.name }}
+          </div>
+          <div>
+            <p>Price: {{ item.price }}</p>
+          </div>
+          <div>
+            <p>Quantity: {{ item.amount }} </p>
+          </div>
+        </div>
+      </div>
+      <div class="removeBtnDiv col-1 col-lg-2">
+        <i class="fas fa-times" (click)="deleteMovie(item)"></i>
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="buttons">
+        <h5>Total: {{ cartService.getTotalPrice()}} kr </h5>
+      </div>
+      <div>
+        <button *ngIf="cartService.getTotalPrice() != 0" (click)="clearCart()" class="btn-dark">Clear cart</button>
+      </div>
+    </div>
+    <div *ngIf="cartService.getTotalPrice() != 0" class="paymentDiv">
+      <button class="btn-info"><a routerLink="/payment">Payment</a></button>
+    </div>
+  </div>
+</div>
+

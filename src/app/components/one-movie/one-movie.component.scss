@@ -1,0 +1,47 @@
+@mixin phone {
+  @media (max-width: 600px) { @content; }
+}
+@mixin mini-tablet {
+  @media (min-width: 600px) { @content; }
+}
+@mixin tablet {
+  @media (min-width: 820px) { @content; }
+}
+@mixin mini-desktop {
+  @media (min-width: 992px) { @content; }
+}
+@mixin desktop {
+  @media (min-width: 1091px) { @content; }
+}
+.row{
+  margin-bottom: 100px;
+}
+.oneMovieDiv{
+  padding-top: 40px;
+  position: relative;
+  .movieImg{
+    margin: 0 auto;
+    width: 150px;
+    @include tablet{
+      width: 200px;
+    }
+    @include desktop{
+      width: 220px;
+    }
+  }
+  .buttonDiv{
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+
+    .btn-info{
+      margin-bottom: 0;
+    }
+
+    .price{
+      text-align: right;
+      margin: 5px 10px;
+      font-weight: bold;
+    }
+  }
+}

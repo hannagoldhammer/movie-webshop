@@ -1,0 +1,32 @@
+.formDiv{
+  padding: 50px;
+  margin-bottom: 150px;
+
+  label{
+    display: block;
+    font-size: small;
+    margin: 8px 0 0 0;
+
+    .validationDiv{
+      color: red;
+    }
+  }
+
+  input{
+    margin-bottom: 15px;
+  }
+
+  .paymentInput{
+    padding-bottom: 80px;
+  }
+
+  .buttonDiv{
+    text-align: center;
+    margin-right: 10px;
+
+    .btn-info{
+      padding: 1px 10px;
+    }
+  }
+}
+

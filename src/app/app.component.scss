@@ -1,0 +1,66 @@
+@mixin desktop {
+  @media (min-width: 1091px) { @content; }
+}
+
+nav{
+  position: relative;
+
+  .cartBadge{
+    position: absolute;
+    right: 110px;
+    padding-left: 10px;
+    @include desktop{
+      right: 50px;
+    }
+    .fas{
+      padding-right: 20px;
+    }
+    .quantityBadge{
+      position: absolute;
+      top: -3px;
+      right: 33px;
+    }
+  }
+  .cartBadge2{
+    position: absolute;
+    right: 110px;
+    padding-left: 10px;
+    @include desktop{
+      right: 50px;
+    }
+    .fas{
+      padding-right: 20px;
+    }
+    .quantityBadge{
+      position: absolute;
+      top: -3px;
+      right: 52px;
+    }
+  }
+}
+
+footer{
+  background-color: #f5f5f5;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+
+  .row{
+    justify-content: space-between;
+  }
+
+  .footerDiv{
+    margin-top: 10px;
+
+    i{
+      margin: 10px;
+    }
+  }
+
+  ul{
+    text-decoration: none;
+  }
+}
+
+
+

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="formDiv">
+    <h3>Your details</h3>
+    <hr>
+    <form (ngSubmit)="saveForm()" [formGroup]="paymentForm">
+      <div>
+        <label for="createdBy">First and last name</label>
+        <input class="col-6" type="text" id="createdBy" formControlName="createdBy" required>
+        <div *ngIf="createdBy.touched && createdBy.invalid">
+          <div *ngIf="createdBy.errors.required">
+            <p class="validationDiv">This field is mandatory.</p>
+          </div>
+          <div *ngIf="createdBy.errors.minlength">
+            <p class="validationDiv">Please enter your first- and lastname.</p>
+          </div>
+        </div>
+      </div>
+      <div class="paymentInput">
+        <label for="paymaneInput">Payment method:</label>
+        <select class="col-6" id="cars" name="cars" formControlName="paymentMethod" required>
+          <option value="mastercard">Mastercard</option>
+          <option value="visa">Visa</option>
+        </select>
+      </div>
+      <div class="buttonDiv">
+        <button type="submit" [disabled]="paymentForm.invalid" class="btn-info"><a routerLink="/thankyou"></a> Place order </button>
+      </div>
+    </form>
+  </div>
+</div>
+

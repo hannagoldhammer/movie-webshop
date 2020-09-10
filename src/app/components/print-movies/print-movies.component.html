@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let movie of listOfMovies" class="col-6 col-md- col-lg-3 ">
+      <div class="completeMovieDiv">
+        <div class="hoverMovieEffect">
+          <img src={{movie.imageUrl}} alt="Movie image" class="movieImg">
+          <div class="readMore">
+            <button class="btn-dark"><a routerLink="/movies/{{movie.id}}">Info</a></button>
+          </div>
+        </div>
+        <p class="movieName"> {{ movie.name }} </p>
+        <p class="category">Category: <span *ngFor="let category of movie.productCategory; index as i"> {{category.category}}<span *ngIf="i !== movie.productCategory.length - 1">, </span></span></p>
+        <p> {{ movie.price | currency: "SEK" :"code":'1.0-0' }} </p>
+        <div class="btnDiv">
+          <button (click)="addToCart(movie)" class="btn-info col-8">Add to cart<a routerLink="/cart" class="button fancy-button"></a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
